@@ -230,15 +230,12 @@ class game_window(arcade.View):
                 self.display_win_message()  # Display win message if all letters are revealed
 
                 print("You win!")
-        else:
-            self.game_over = True
+            # Check if lives reach zero
             if self.lives == 0:
+                self.game_over = True
                 print("Game over! You ran out of lives.")
                 self.show_win_lose_sprite = True
                 self.display_lose_message()  # Display lose message if player runs out of lives
-
-            else:
-                print("Game over! You've already won.")
 
     def display_win_message(self):
         self.show_win_lose_sprite = True
@@ -247,6 +244,8 @@ class game_window(arcade.View):
     def display_lose_message(self):
         self.show_win_lose_sprite = True
         self.win_lose_sprite_text = " You lose!"
+        revealed_word = " ".join(self.chosen_word)
+        self.hide_word = revealed_word
 
 
     def restart_game(self):

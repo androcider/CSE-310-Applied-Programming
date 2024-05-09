@@ -1,7 +1,6 @@
-    def on_mouse_press(self, x, y, button, modifiers):
-        print("Mouse Clicked at:", x, y)
-        for button in self.buttons:
-            button.on_mouse_press(x, y, button, modifiers)
-
-        if self.game_over:
-            self.replay_button.on_mouse_press(x, y, button, modifiers)  # Handle click on replay button
+        # else:
+        #     self.game_over = True
+        #     if self.lives == 0:
+        #         print("Game over! You ran out of lives.")
+        #         self.show_win_lose_sprite = True
+        #         self.display_lose_message()  # Display lose message if player runs out of lives
